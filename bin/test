@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'microbilt'
+
+test = Microbilt::Test.new('this is a test')
+puts test.execute
