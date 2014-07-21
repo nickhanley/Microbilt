@@ -1,6 +1,19 @@
 #!/usr/bin/env ruby
 
 require 'microbilt'
+require 'microbilt/client'
 
-test = Microbilt::Test.new('this is a test')
-puts test.execute
+test = Microbilt::Test.new('this+is+a+test')
+puts test.execute!
+
+Microbilt.configure do |config|
+  config.server = :test
+  config.format = :xml
+  config.client_id = 'MyClientID'
+  config.client_pass = 'MyPassword'
+end
+
+client = Microbilt::Client.new()
+puts Microbilt.options
+puts client.body_params
+puts client.server_name

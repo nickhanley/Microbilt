@@ -11,7 +11,7 @@ module Microbilt
     FORM_URI = '/WebServices/IBV/Home/AddCustomer'
 
     # Options
-    DEFAULT_SERVER      = :production
+    DEFAULT_SERVER      = :test
     DEFAULT_DATA_FORMAT = :json
     DEFAULT_CLIENT_ID   = nil
     DEFAULT_CLIENT_PASS = nil

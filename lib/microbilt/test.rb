@@ -1,3 +1,5 @@
+require 'typhoeus'
+
 module Microbilt
 
   class Test
@@ -7,8 +9,10 @@ module Microbilt
     end
 
     def execute!
-      req = Typhoeus.get("http://md5.jsontest.com/?text=#{phrase}")
-      req.response
+      req = Typhoeus::Request.new("http://md5.jsontest.com/?text=#{@phrase}", followlocation: true)
+      response = req.run
+      puts response.response_body
+      response
     end
   end
 
