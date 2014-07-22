@@ -7,7 +7,7 @@ require 'microbilt/test'
 module Microbilt
   extend Configuration
 
-  def new(options = {})
+  def self.new(options = {})
     Client.new(options)
   end
 
